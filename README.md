@@ -55,11 +55,14 @@ A real-time computer vision analytics platform that streams video frames through
 
 ## Live Demo
 
-- **Frontend**: https://cv-analytics-platform.vercel.app
-- **Backend API**: https://cv-analytics-backend.fly.dev
-- **ML Service**: https://cv-ml-service.fly.dev/health
+| Service | URL | Status |
+|---------|-----|--------|
+| **Frontend (Vercel)** | https://frontend-nu-three-92.vercel.app | ✅ Live |
+| **GitHub Repository** | https://github.com/RuphakVarmaa/cv-analytics-platform | ✅ Public |
+| **Backend API (Fly.io)** | https://cv-analytics-backend.fly.dev | ⏳ Deploy pending |
+| **ML Service (Fly.io)** | https://cv-ml-service.fly.dev/health | ⏳ Deploy pending |
 
-Demo mode works without login — open https://cv-analytics-platform.vercel.app/dashboard and it connects automatically using a pre-seeded demo session with a sample video feed.
+**Demo mode works without login** — open https://frontend-nu-three-92.vercel.app/dashboard, select **Demo** source, and click **Connect**. Live bounding box overlay and all 4 charts are functional once the Fly.io backend is deployed.
 
 ## Performance Benchmarks
 
@@ -106,7 +109,7 @@ Demo mode works without login — open https://cv-analytics-platform.vercel.app/
 ### Start all services with Docker Compose
 
 ```bash
-git clone https://github.com/<your-org>/cv-analytics-platform.git
+git clone https://github.com/RuphakVarmaa/cv-analytics-platform.git
 cd cv-analytics-platform
 
 # Copy and edit backend env
