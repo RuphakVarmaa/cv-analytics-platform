@@ -135,16 +135,17 @@ async def stream_endpoint(
             total_detections += len(result.detections)
 
             # Pack and send binary msgpack frame result
+            # bbox is normalized 0-1; frontend expects nested { bbox: {x1,y1,x2,y2} }
             payload = {
                 "type": "FRAME_RESULT",
                 "frame_id": result.frame_id,
                 "timestamp_ms": result.timestamp_ms,
                 "detections": [
                     {
-                        "x1": d.x1, "y1": d.y1, "x2": d.x2, "y2": d.y2,
-                        "confidence": d.confidence,
-                        "class_id": d.class_id,
                         "class_name": d.class_name,
+                        "confidence": d.confidence,
+                        "bbox": {"x1": d.x1, "y1": d.y1, "x2": d.x2, "y2": d.y2},
+                        "track_id": None,
                     }
                     for d in result.detections
                 ],
